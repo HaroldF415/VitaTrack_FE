@@ -52,3 +52,21 @@ My mission with `VitaTrack` is to make managing blood sugar levels simpler, frie
 - **Third-Party App Integration** - Users can connect their third-party health apps to VitaTrack to track additional health metrics like fitness/exercise, diet, mental health, and sleep.
 
 By creating this type of platform that combines practical tools with engagin features, we hope to encourage users to take an active role in managing theirt health, without feeling overwhelmed. `VitaTrack` aims to be a reliable companion in the user's health journey, providing necessary tools and support while also celebrating their achievements and progress.
+
+<br>
+
+<div style="font-size:1.5em">
+
+## Project Requirements
+
+- Trello Board -> [Trello Board](https://trello.com/b/4X6XZQ8Q/vitatrack)
+
+- Wireframes -> [Wireframes](https://www.figma.com/file/6Z0Z1ZQ8Z2Z1ZQ8Z2Z1ZQ8/VitaTrack?node-id=0%3A1)
+
+- ERD -> [ERD](https://dbdiagram.io/d/60b0b0d0b29a09603d17a7b7)
+
+- Deployment Front-End -> [VitaTrack](https://vitatrack.netlify.app/)
+
+- Deployment Back-End -> [VitaTrack API](https://vitatrack-api.herokuapp.com/)
+
+</div>
