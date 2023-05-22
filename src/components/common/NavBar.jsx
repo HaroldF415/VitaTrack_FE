@@ -5,7 +5,7 @@ import { Navbar, Collapse, Typography, IconButton } from "@material-tailwind/rea
 // eslint-disable-next-line react/prop-types
 const IconSVG = ({ shape }) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 relative -top-3" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
       {shape === "close" ? <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /> : shape === "hamburger" ? <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" /> : null}
     </svg>
   );
@@ -14,13 +14,12 @@ const IconSVG = ({ shape }) => {
 // eslint-disable-next-line react/prop-types
 const NavLink = ({ linkPath, linkName }) => {
   return (
-    <>
-      <Typography as="li" variant="small" color="blue-gray" className="p-1 font-normal">
-        <Link to={linkPath} className="flex items-center">
-          {linkName}
-        </Link>
-      </Typography>
-    </>
+    <Typography as="li" variant="small" color="blue-gray" className="p-1 font-normal">
+      <Link to={linkPath} className="flex items-center group relative transition-colors duration-300">
+        {linkName}
+        <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+      </Link>
+    </Typography>
   );
 };
 
@@ -46,7 +45,7 @@ const Navigation = () => {
 
   return (
     <>
-      <Navbar className="sticky inset-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4">
+      <Navbar className="sticky inset-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4 border-b-2 border-slate-gray">
         <div className="flex items-center justify-between text-blue-gray-900">
           <Typography variant="small" className="mr-4 cursor-pointer py-1.5 font-medium">
             <Link to="/"> VitaTrack</Link>
