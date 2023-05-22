@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Navbar, Collapse, Typography, IconButton } from "@material-tailwind/react";
 
@@ -13,11 +13,22 @@ const IconSVG = ({ shape }) => {
 
 // eslint-disable-next-line react/prop-types
 const NavLink = ({ linkPath, linkName }) => {
+  const location = useLocation();
+  const isActive = location.pathname === linkPath;
+  const [isHovered, setIsHovered] = useState(false);
+
+  console.log(location.pathname);
+  console.log(linkPath);
+  console.log(isActive);
+
+  const handleMouseEnter = () => setIsHovered(true);
+  const handleMouseLeave = () => setIsHovered(false);
+
   return (
     <Typography as="li" variant="small" color="blue-gray" className="p-1 font-normal">
-      <Link to={linkPath} className="flex items-center group relative transition-colors duration-300">
-        {linkName}
-        <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+      <Link to={linkPath} className={`flex items-center group relative transition-colors duration-300 text-color-blue-gray-500`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <div className="justify-center">{linkName}</div>
+        {(isHovered || isActive) && <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></span>}
       </Link>
     </Typography>
   );
@@ -60,7 +71,7 @@ const Navigation = () => {
           </div>
         </div>
         {/* Joshua and Keeanu helped me fix this */}
-        <Collapse className="flex justify-end" open={openNav}>
+        <Collapse className="flex justify-center bg-red-50" open={openNav}>
           <NavLinkList />
         </Collapse>
       </Navbar>
