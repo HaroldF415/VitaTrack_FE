@@ -17,15 +17,11 @@ const NavLink = ({ linkPath, linkName }) => {
   const isActive = location.pathname === linkPath;
   const [isHovered, setIsHovered] = useState(false);
 
-  console.log(location.pathname);
-  console.log(linkPath);
-  console.log(isActive);
-
   const handleMouseEnter = () => setIsHovered(true);
   const handleMouseLeave = () => setIsHovered(false);
 
   return (
-    <Typography as="li" variant="small" color="blue-gray" className="p-1 font-normal">
+    <Typography as="li" variant="small" color="blue-gray" className="p-1 font-normal text-gray-600">
       <Link to={linkPath} className={`flex items-center group relative transition-colors duration-300 text-color-blue-gray-500`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         <div className="justify-center">{linkName}</div>
         {(isHovered || isActive) && <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></span>}
@@ -56,10 +52,12 @@ const Navigation = () => {
 
   return (
     <>
-      <Navbar className="sticky inset-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4 border-b-2 border-slate-gray">
+      <Navbar className="bg-slate-300 sticky inset-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4 border-b-2 border-slate-gray">
         <div className="flex items-center justify-between text-blue-gray-900">
           <Typography variant="small" className="mr-4 cursor-pointer py-1.5 font-medium">
-            <Link to="/"> VitaTrack</Link>
+            <Link to="/">
+              <span className="text-3xl text-gray-800">VitaTrack</span>
+            </Link>
           </Typography>
           <div className="flex items-center gap-4">
             <div className="mr-4 hidden lg:block">
@@ -71,7 +69,7 @@ const Navigation = () => {
           </div>
         </div>
         {/* Joshua and Keeanu helped me fix this */}
-        <Collapse className="flex justify-center bg-red-50" open={openNav}>
+        <Collapse className="bg-slate-300" open={openNav}>
           <NavLinkList />
         </Collapse>
       </Navbar>
