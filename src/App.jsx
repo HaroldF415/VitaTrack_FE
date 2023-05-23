@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Header, Home, Tracker, Metrics, Achievements, Community, Profile } from "./components";
+import { UserProvider } from "./contexts/UserContext";
 
 const App = () => {
   return (
-    <>
+    <UserProvider>
       <Router>
         <Header />
         <Routes>
@@ -15,7 +16,7 @@ const App = () => {
           <Route path="/profile" element={<Profile />} />
         </Routes>
       </Router>
-    </>
+    </UserProvider>
   );
 };
 
