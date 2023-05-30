@@ -8,7 +8,7 @@ export const useUsers = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get("https://localhost:3003/users");
+        const response = await axios.get("http://localhost:3003/users");
         setUsers(response.data);
       } catch (error) {
         setError(error.message);

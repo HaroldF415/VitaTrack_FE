@@ -1,4 +1,4 @@
-import Header from "./common/Header";
+import Header from "./common/Header/Header";
 import Home from "./Home";
 import Achievements from "./Achievements/Achievements";
 import Community from "./Community/Community";
