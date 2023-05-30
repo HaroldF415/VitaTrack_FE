@@ -1,3 +1,5 @@
+import landingIMG from "../assets/VitaTrack002.png";
+
 const Home = () => {
   return (
     <>
@@ -12,7 +14,7 @@ const Home = () => {
         </Card> */}
 
         <div className="mb-12 overflow-hidden flex justify-center items-center">
-          <img alt="diabetes" className="w-full object-cover object-center transition-all duration-500 ease-in-out sm:w-75% lg:w-50% xl:w-33.33% mb-3" src="src/assets/VitaTrack002.png" />
+          <img alt="diabetes" className="w-full object-cover object-center transition-all duration-500 ease-in-out sm:w-75% lg:w-50% xl:w-33.33% mb-3" src={landingIMG} />
         </div>
         <div className="flex flex-col  items-center h-full w-full">
           <div className="text-gray-500 text-xl mb-10">
